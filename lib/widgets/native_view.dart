@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
+import 'package:native_manager_state/core/native_controller.dart';
+import 'package:native_manager_state/core/native_manager_controller.dart';
 
-abstract class NativeView<T extends Object> extends StatelessWidget {
+abstract class NativeView<T extends NativeController> extends StatelessWidget {
   const NativeView({super.key});
 
-  T get controller => GetIt.I.get<T>();
+  T get controller => NativeManagerController.get<T>();
 
   @override
   Widget build(BuildContext context);

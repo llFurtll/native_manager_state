@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
+import 'package:native_manager_state/core/native_inject.dart';
 
 class NativeRouter {
   final String name;
   final Widget Function() build;
-  final Function(GetIt injector) inject;
+  final NativeInject inject;
 
   const NativeRouter({
     required this.name,

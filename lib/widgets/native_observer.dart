@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:native_manager_state/core/state_notifier.dart';
 import 'package:native_manager_state/core/watch_notifier.dart';
-import 'package:native_manager_state/notifiers/native_notifier.dart';
+import 'package:native_manager_state/core/native_notifier.dart';
 
 
 class NativeObserver extends StatefulWidget {

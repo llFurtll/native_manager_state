@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
+import 'package:native_manager_state/core/native_observer_route.dart';
 import 'package:native_manager_state/core/native_router.dart';
 
 class NativeMaterialApp extends MaterialApp {
@@ -8,15 +8,13 @@ class NativeMaterialApp extends MaterialApp {
   NativeMaterialApp({
     required this.nativeRoutes,
     super.key,
-    super.navigatorKey,
     super.scaffoldMessengerKey,
     super.home,
-    super.initialRoute,
+    required super.initialRoute,
     super.onGenerateInitialRoutes,
     super.onUnknownRoute,
-    super.navigatorObservers,
     super.builder,
-    super.title = '',
+    super.title,
     super.onGenerateTitle,
     super.color,
     super.theme,
@@ -44,8 +42,11 @@ class NativeMaterialApp extends MaterialApp {
   }) : super(
     onGenerateRoute: (settings) {
       final router = nativeRoutes.firstWhere((route) => route.name == settings.name);
-      router.inject(GetIt.I);
-      return MaterialPageRoute(builder: (context) => router.build());
-    }, 
-  );
+      router.inject.dependencies();
+      return MaterialPageRoute(builder: (context) => router.build(), settings: settings);
+    },
+    navigatorObservers: [NativeObserverRoute()]
+  ) {
+    assert(initialRoute != null, "initialRoute is null");
+  }
 }
