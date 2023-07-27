@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:native_manager_state/core/native_observer_route.dart';
-import 'package:native_manager_state/core/native_router.dart';
+import 'package:native_state/core/native_observer_route.dart';
+import 'package:native_state/core/native_router.dart';
 
 class NativeMaterialApp extends MaterialApp {
   final List<NativeRouter> nativeRoutes;

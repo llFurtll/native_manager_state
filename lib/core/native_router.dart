@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:native_manager_state/core/native_inject.dart';
+import 'package:native_state/core/native_inject.dart';
 
 class NativeRouter {
   final String name;

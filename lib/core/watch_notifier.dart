@@ -1,4 +1,4 @@
-import 'package:native_manager_state/core/native_notifier.dart';
+import 'package:native_state/core/native_notifier.dart';
 
 class WatchNotifier {
   final List<NativeNotifier> notifiers;

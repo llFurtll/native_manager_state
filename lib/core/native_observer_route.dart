@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:native_manager_state/core/native_inject.dart';
-import 'package:native_manager_state/core/native_manager_controller.dart';
+import 'package:native_state/core/native_inject.dart';
+import 'package:native_state/core/native_manager_controller.dart';
 
 class NativeObserverRoute extends NavigatorObserver {
   @override

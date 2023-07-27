@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:native_manager_state/core/state_notifier.dart';
+import 'package:native_state/core/state_notifier.dart';
 
 abstract class NativeNotifier extends ChangeNotifier {
   late StateNotifier _stateNotifier;
