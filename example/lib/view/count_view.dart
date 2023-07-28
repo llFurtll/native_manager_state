@@ -21,7 +21,7 @@ class CountView extends NativeView<CountController> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => controller.toSecond(context),
+        onPressed: controller.toSecond,
         child: const Icon(Icons.add),
       ),
     );

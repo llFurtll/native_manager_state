@@ -54,6 +54,10 @@ class NativeMaterialApp extends MaterialApp {
       router.inject.dependencies();
       return MaterialPageRoute(builder: (context) => router.build(), settings: settings);
     },
-    navigatorObservers: [NativeObserverRoute()],
+    navigatorObservers: [nativeObserverRoute],
+    navigatorKey: nativeNavigatorKey
   );
+
+  static GlobalKey<NavigatorState> nativeNavigatorKey = GlobalKey();
+  static NativeObserverRoute nativeObserverRoute = NativeObserverRoute();
 }
