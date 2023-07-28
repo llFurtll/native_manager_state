@@ -3,7 +3,17 @@ import 'package:native_state/core/state_notifier.dart';
 import 'package:native_state/core/watch_notifier.dart';
 import 'package:native_state/core/native_notifier.dart';
 
-
+/// Widget responsável em observar um NativeNotifier.
+/// Aqui é possível trabalhar com os estados do StateNotifier.
+/// Toda vez que seu NativeNotifier alterar para o estado de carregando,
+/// automaticamente será chamado o método onLoading.
+/// Se ele estiver em modo error, então será chamado o onError.
+/// E por fim se ele estiver pronto será chamado o onReady.
+/// 
+/// notifier -> O NativeNotifier a ser observado.
+/// onError -> Chamado quando o NativeNotifier notifica como o estado de error.
+/// onReady -> Chamado quando o NativeNotifier notifica como o estado de ready.
+/// onLoading -> Chamado quando o NativeNotifier notifica como o estado de loading.
 class NativeObserver extends StatefulWidget {
   final NativeNotifier notifier;
   final Widget Function(WatchNotifier watchNotifier)? onError;

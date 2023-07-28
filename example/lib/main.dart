@@ -21,7 +21,6 @@ void main() {
           inject: SecondInject()
         )
       ],
-      initialRoute: "/"
     )
   );
 }
