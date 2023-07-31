@@ -6,16 +6,13 @@ import 'package:native_state/widgets/native_app.dart';
 class NativeNavigator {
   const NativeNavigator();
 
-  static Object? _arguments;
-
   static Future<Object?> toNamed(
     String route,
     {
       Object? argument
     }
   ) async {
-    _arguments = argument;
-    return NativeMaterialApp.nativeNavigatorKey.currentState?.pushNamed(route, arguments: argument);
+    return await NativeMaterialApp.nativeNavigatorKey.currentState?.pushNamed(route, arguments: argument);
   }
 
   static void offUntil(
@@ -27,9 +24,8 @@ class NativeNavigator {
   static void back({
     Object? arguments
   }) async {
-    _arguments = arguments;
     NativeMaterialApp.nativeNavigatorKey.currentState?.pop(arguments);
   }
 
-  static Object? get arguments => _arguments;
+  static Object? get arguments => ModalRoute.of(NativeMaterialApp.nativeNavigatorKey.currentState!.overlay!.context)!.settings.arguments!;
 }
