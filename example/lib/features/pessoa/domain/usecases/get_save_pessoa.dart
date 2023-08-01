@@ -1,5 +1,6 @@
 import 'package:example/features/pessoa/domain/entities/pessoa.dart';
 import 'package:example/features/pessoa/domain/repositories/pessoa_repository.dart';
+import 'package:flutter/material.dart';
 
 class GetSavePessoa {
   final PessoaRepository repository;
@@ -10,6 +11,7 @@ class GetSavePessoa {
 
   Future<(Exception?, Pessoa?)> call(SavePessoaParams params) async {
     if (params.pessoa.idPessoa == 0) {
+      params.pessoa.idPessoa = UniqueKey().hashCode;
       return await repository.insert(params.pessoa);
     }
 

@@ -55,6 +55,7 @@ abstract class NativeInject {
     for (dynamic object in list) {
       log("Remove instance: ${object.runtimeType}");
     }
+    list.clear();
   }
 
   void dependencies();

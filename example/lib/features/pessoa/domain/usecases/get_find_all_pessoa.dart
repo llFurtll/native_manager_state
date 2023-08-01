@@ -8,7 +8,7 @@ class GetFindAllPessoa {
     required this.repository
   });
 
-  Future<(Exception?, List<Pessoa>?)> findAll(NoParams params) async {
+  Future<(Exception?, List<Pessoa>?)> call(NoParams params) async {
     return await repository.findAll();
   }
 }
