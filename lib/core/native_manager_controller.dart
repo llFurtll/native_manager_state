@@ -34,6 +34,7 @@ class NativeManagerController {
 
   static void onClose(String scoped) {
     _controllers[scoped]!.onClose();
+    _controllers.remove(scoped);
   }
 
   static void add<T extends NativeController>(String scoped, T controller) {
