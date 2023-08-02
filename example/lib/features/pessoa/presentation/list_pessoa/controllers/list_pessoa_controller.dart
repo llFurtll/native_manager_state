@@ -40,4 +40,13 @@ class ListPessoaController extends NativeController {
     }
     isLoading.setReady();
   }
+
+  @override
+  void receive(String message, {data}) {
+    switch (message) {
+      case "print":
+        print("PODE DEIXAR :D");
+        break;
+    }
+  }
 }

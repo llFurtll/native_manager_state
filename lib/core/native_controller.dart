@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:native_state/core/native_mediator.dart';
 
 /// A NativeController foi criada para definir um padrão
 /// para as Controllers da aplicação, nisso o desenvolvedor
@@ -18,7 +19,10 @@ import 'package:flutter/material.dart';
 /// É interessante usar para cancelar/dipose tasks ou controladores que estejam executando
 /// processos e devem ser parados no momento que o Widget não está sendo mais utilizado.
 abstract class NativeController {
+  final mediator = NativeMediator();
+
   NativeController() {
+    mediator.register(this);
     onInit();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       onReady();
@@ -27,5 +31,9 @@ abstract class NativeController {
 
   void onInit() {}
   void onReady() {}
-  void onClose() {}
+  void onClose() {
+    mediator.unregister(this);
+  }
+
+  void receive(String message, {dynamic data}) {}
 }
