@@ -10,12 +10,6 @@ abstract class Failure {
   });
 }
 
-class ExampleFailure extends Failure {
-  const ExampleFailure({
-    required super.message
-  });
-}
-
 class NativeRecords<C extends IUseCase, P> {
   final C instance;
   final P params;
@@ -35,14 +29,5 @@ class NativeRecords<C extends IUseCase, P> {
     if (ok != null) {
       result(ok);
     }
-  }
-}
-
-class NoParams {}
-
-class GetVersion extends IUseCase<String?, NoParams> {
-  @override
-  Future<(Failure?, String?)> call(NoParams params) async {
-    return (null, "V1.5");
   }
 }
