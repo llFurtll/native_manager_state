@@ -46,12 +46,3 @@ class GetVersion extends IUseCase<String?, NoParams> {
     return (null, "V1.5");
   }
 }
-
-void main() async {
-  final result = NativeRecords<GetVersion, NoParams>(
-    instance: GetVersion(),
-    params: NoParams()
-  );
-
-  result.fold((failure) => print(failure.message), (result) => print(result));
-}

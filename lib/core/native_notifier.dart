@@ -35,3 +35,15 @@ abstract class NativeNotifier extends ChangeNotifier {
 
   StateNotifier get state => _stateNotifier;
 }
+
+class GenericNativeNotifier<T> extends NativeNotifier {
+  T value;
+
+  GenericNativeNotifier({
+    required this.value
+  });
+
+  void refresh() {
+    notifyListeners();
+  }
+}

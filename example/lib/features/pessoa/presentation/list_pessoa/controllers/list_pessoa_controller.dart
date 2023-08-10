@@ -45,7 +45,6 @@ class ListPessoaController extends NativeController {
   void receive(String message, {data}) {
     switch (message) {
       case "print":
-        print("PODE DEIXAR :D");
         break;
     }
   }
